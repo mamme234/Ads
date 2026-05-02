@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mini Earn App</title>
+
+<script src="//libtl.com/sdk.js" data-zone="10892289" data-sdk="show_10892289"></script>
+
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding-top:50px;
+}
+
+button{
+padding:15px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#22c55e;
+color:white;
+margin-top:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+margin:20px;
+border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💎 Mini Earn App</h1>
+
+<div class="card">
+<p id="coins">Coins: 0</p>
+<button onclick="watchAd()">🎬 Watch Ad</button>
+</div>
+
+<script>
+let coins = localStorage.getItem("coins") || 0;
+coins = parseInt(coins);
+
+document.getElementById("coins").innerText = "Coins: " + coins;
+
+let cooldown = false;
+
+function watchAd() {
+    if (cooldown) {
+        alert("Wait a few seconds...");
+        return;
+    }
+
+    cooldown = true;
+
+    show_10892289().then(() => {
+        coins += 1;
+        localStorage.setItem("coins", coins);
+        document.getElementById("coins").innerText = "Coins: " + coins;
+        alert("You earned 1 coin!");
+    }).catch(() => {
+        alert("Ad not completed");
+    });
+
+    setTimeout(() => {
+        cooldown = false;
+    }, 5000);
+}
+</script>
+
+</body>
+</html>
