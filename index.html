@@ -4,20 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ads Web - Useful Content Hub</title>
+<title>Ads Web</title>
 
-<!-- SEO -->
-<meta name="description" content="Ads Web provides helpful content, guides, and updates for users worldwide.">
-<meta name="keywords" content="online tips, earning tips, web tools, guides">
+<meta name="description" content="Ads Web provides helpful articles, guides, and online tips for users.">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5908865301211504"
-crossorigin="anonymous"></script>
+<!-- Google Verification -->
+<meta name="3b93c6692cde415c4efd2000960f4942d978aebd"
+content="3b93c6692cde415c4efd2000960f4942d978aebd" />
 
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial,sans-serif;
 background:#0f172a;
 color:white;
 line-height:1.6;
@@ -27,6 +25,16 @@ header{
 background:#1e293b;
 padding:15px;
 text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+
+header h1{
+margin:0;
+color:#38bdf8;
+}
+
+nav{
+margin-top:10px;
 }
 
 nav button{
@@ -34,15 +42,20 @@ margin:5px;
 padding:10px 15px;
 border:none;
 border-radius:8px;
-cursor:pointer;
 background:#334155;
 color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+nav button:hover{
+background:#475569;
 }
 
 section{
 display:none;
 padding:20px;
-max-width:800px;
+max-width:900px;
 margin:auto;
 }
 
@@ -52,9 +65,10 @@ display:block;
 
 .box{
 background:#1e293b;
-padding:15px;
-border-radius:10px;
+padding:18px;
+border-radius:12px;
 margin-top:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 h2{
@@ -63,19 +77,47 @@ color:#38bdf8;
 
 footer{
 text-align:center;
-padding:15px;
-font-size:12px;
+padding:20px;
 color:#94a3b8;
+font-size:13px;
+margin-top:30px;
+}
+
+/* BUTTON */
+.adBtn{
+width:100%;
+padding:15px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+background:linear-gradient(45deg,#00ffcc,#00ccff);
+color:black;
+cursor:pointer;
+margin-top:10px;
+}
+
+.adBtn:hover{
+opacity:0.9;
 }
 </style>
+
+<!-- HILLTOP POPUNDER -->
+<script>
+(function(h,o,u,n,d) {
+h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+d=o.createElement(u);d.async=1;d.src=n
+n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+})(window,document,'script','https://YOUR-HILLTOP-POPUNDER-LINK.js','hilltopAds');
+</script>
 
 </head>
 
 <body>
 
 <header>
-<h2>🌐 Ads Web</h2>
-<p>Your simple guide to online tools & tips</p>
+<h1>🌐 Ads Web</h1>
+<p>Helpful Articles & Online Tips</p>
 
 <nav>
 <button onclick="show('home')">Home</button>
@@ -88,64 +130,67 @@ color:#94a3b8;
 
 <!-- HOME -->
 <section id="home" class="active">
+
 <h2>🏠 Welcome</h2>
 
 <div class="box">
 <p>
-Welcome to Ads Web. This platform shares helpful information about online tools, digital tips, and simple guides for everyday users.
+Welcome to Ads Web. Here you can read useful guides, online tips, and digital content designed for everyday internet users.
 </p>
 </div>
 
 <div class="box">
-<h3>💡 What You’ll Find Here</h3>
+<h3>🔥 Popular Topics</h3>
+
 <ul>
-<li>Simple online tips</li>
-<li>Beginner-friendly guides</li>
-<li>Useful web tools</li>
-<li>Digital knowledge</li>
+<li>Online safety tips</li>
+<li>Useful free tools</li>
+<li>Simple web guides</li>
+<li>Beginner online learning</li>
 </ul>
 </div>
 
-<!-- Ad -->
 <div class="box">
-<p>Advertisement</p>
+<h3>🎁 Support This Website</h3>
 
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-5908865301211504"
-data-ad-slot="1234567890"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
+<p>
+Click below to open sponsor content and support our website.
+</p>
 
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<button class="adBtn" onclick="openAd()">
+🎁 Open Sponsor Page
+</button>
 
 </div>
+
 </section>
 
 <!-- BLOG -->
 <section id="blog">
-<h2>📝 Blog</h2>
+
+<h2>📝 Blog Articles</h2>
 
 <div class="box">
-<h3>How to Stay Safe Online</h3>
+<h3>How To Stay Safe Online</h3>
+
 <p>
-Always use strong passwords and avoid clicking unknown links. Keeping your data safe is very important in today’s digital world.
+Use strong passwords and avoid suspicious links to protect your personal information online.
 </p>
 </div>
 
 <div class="box">
-<h3>Top Free Tools for Students</h3>
+<h3>Best Free Websites For Students</h3>
+
 <p>
-There are many free tools online for learning, including note apps, calculators, and educational platforms.
+Many free educational websites help students improve learning and productivity.
 </p>
 </div>
 
 <div class="box">
-<h3>Beginner Guide to Earning Online</h3>
+<h3>Why Website Speed Matters</h3>
+
 <p>
-Online earning requires patience. Start with learning skills like writing, design, or coding before expecting income.
+Fast websites improve user experience and help visitors stay longer on your platform.
 </p>
 </div>
 
@@ -153,56 +198,82 @@ Online earning requires patience. Start with learning skills like writing, desig
 
 <!-- ABOUT -->
 <section id="about">
+
 <h2>ℹ️ About Us</h2>
 
 <div class="box">
 <p>
-Ads Web is an independent informational website created to share helpful knowledge and resources for internet users.
+Ads Web is an informational platform sharing online guides, articles, and useful resources.
 </p>
+
 <p>
-Our goal is to provide simple and useful content that anyone can understand.
+Our goal is to provide simple and beginner-friendly content.
 </p>
 </div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+
 <h2>📞 Contact</h2>
 
 <div class="box">
 <p>Email: ghazimuhammadilyas@gmail.com</p>
-<p>We usually respond within 24–48 hours.</p>
+
+<p>
+For support or business inquiries, contact us anytime.
+</p>
 </div>
+
 </section>
 
 <!-- PRIVACY -->
 <section id="privacy">
+
 <h2>🔒 Privacy Policy</h2>
 
 <div class="box">
 <p>
-We respect your privacy. Ads Web may use cookies and third-party services like Google AdSense to display advertisements.
+This website may use cookies and third-party advertising services to improve user experience.
 </p>
 
 <p>
-We do not collect personal sensitive information. Third-party vendors may use cookies to serve relevant ads.
+We do not collect sensitive personal information.
 </p>
 
 <p>
-By using this site, you agree to our privacy policy.
+By using this website, you agree to our privacy practices.
 </p>
 </div>
+
 </section>
 
 <footer>
-© 2026 Ads Web — All rights reserved
+© 2026 Ads Web — All Rights Reserved
 </footer>
 
 <script>
+
+/* PAGE NAVIGATION */
 function show(id){
-document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+document.querySelectorAll("section").forEach(s=>{
+s.classList.remove("active");
+});
+
 document.getElementById(id).classList.add("active");
 }
+
+/* HILLTOP DIRECT LINK */
+function openAd(){
+
+window.open(
+"https://YOUR-HILLTOP-DIRECT-LINK",
+"_blank"
+);
+
+}
+
 </script>
 
 </body>
