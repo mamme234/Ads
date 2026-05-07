@@ -73,7 +73,7 @@ background:#475569;
 transform:scale(1.05);
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
 display:none;
 padding:20px;
@@ -97,7 +97,7 @@ transform:translateY(0);
 }
 }
 
-/* CARDS */
+/* BOX */
 .box{
 background:#1e293b;
 padding:20px;
@@ -153,14 +153,16 @@ border-top:1px solid rgba(255,255,255,0.1);
 
 <!-- HILLTOP POPUNDER SCRIPT -->
 <script>
-(function(w,u){
-var d=document,s='script',
-o=d.createElement(s),
-m=d.getElementsByTagName(s)[0];
-o.async=1;
-o.src='https://wrathful-piano.com/bV3IV.0cPP3ppbvhbJmlV-JoZkDP0H3-M/DuIf0Y0dDJYk5/LSTkctwBMBj/Qg4lNtz/Mv';
-m.parentNode.insertBefore(o,m);
-})(window);
+(function(iosh){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = iosh || {};
+s.src = "//windy-imagination.com/ciDp9r6Yb.2t5HllSBWpQJ9KNwzZAOyKNrDig_2kOjS/0o3BM/DgIA0VOfD_cyzU";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
 </script>
 
 </head>
@@ -218,14 +220,18 @@ Our platform shares helpful information for students, beginners, and internet us
 
 <div class="box">
 
-<h2>🎁 Support Our Website</h2>
+<h2>💡 About This Website</h2>
 
 <p>
-Opening sponsor content helps support our platform and future updates.
+This website shares educational and informational content for internet users around the world.
 </p>
 
-<button class="adBtn" onclick="openSponsor()">
-🎁 Open Sponsor
+<p>
+New articles and resources are added regularly.
+</p>
+
+<button class="adBtn" onclick="show('blog')">
+📚 Read Articles
 </button>
 
 </div>
@@ -366,16 +372,6 @@ section.classList.remove("active");
 });
 
 document.getElementById(id).classList.add("active");
-
-}
-
-/* OPEN SPONSOR */
-function openSponsor(){
-
-window.open(
-"https://wrathful-piano.com/bV3IV.0cPP3ppbvhbJmlV-JoZkDP0H3-M/DuIf0Y0dDJYk5/LSTkctwBMBj/Qg4lNtz/Mv",
-"_blank"
-);
 
 }
 
