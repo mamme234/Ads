@@ -1,8 +1,17 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rewards Hub</title><style>
+
+<title>Rewards Hub</title>
+
+<meta name="description" content="Simple rewards and useful online content.">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -27,7 +36,7 @@ color:#cbd5e1;
 }
 
 .container{
-max-width:900px;
+max-width:800px;
 margin:auto;
 padding:15px;
 }
@@ -54,114 +63,84 @@ border-radius:14px;
 cursor:pointer;
 background:linear-gradient(45deg,#00ffcc,#00aaff);
 color:black;
-animation:pulse 1.6s infinite;
+transition:0.2s;
 }
 
 .btn:hover{
 transform:scale(1.03);
 }
 
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.05)}
-100%{transform:scale(1)}
-}
-
-nav{
-display:flex;
-gap:10px;
-justify-content:center;
-margin-top:10px;
-flex-wrap:wrap;
-}
-
-nav button{
-background:#334155;
-color:white;
-border:none;
-padding:10px 14px;
-border-radius:10px;
-cursor:pointer;
-}
-
-nav button:hover{
-background:#475569;
-}
-
-section{display:none;}
-.active{display:block;}
-
 #status{
 margin-top:10px;
 color:#facc15;
 }
 
-</style></head>
-<body><header>
-<h1>🎮 Rewards Hub</h1>
-<p>Play • Watch • Earn Rewards</p><nav>
-<button onclick="show('home')">Home</button>
-<button onclick="show('earn')">Earn</button>
-<button onclick="show('blog')">Tips</button>
-</nav>
-</header><!-- 🔥 ADS BUTTON --><div class="box" style="max-width:900px;margin:20px auto;">
-<h2>🎁 Watch Ad Reward</h2>
-<p>Click below to load a reward ad and earn bonus.</p><button class="adBtn" onclick="watchAd()">
-🎬 Watch Ad & Earn Reward
-</button><p id="adStatus"></p>
-</div><div class="container"><!-- HOME --><section id="home" class="active">
+</style>
+
+<!-- ADS SCRIPT -->
+<script>
+(function(aloty){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+
+s.settings = aloty || {};
+s.src = "//sophisticatedpin.com/b/XyV/s.d/GHlP0TY/WFcn/Je/mN9luiZHU/lDkzP/Tyc/waMxj_Q/5zNDjBE/tjNlzOA/yCNrDWkr2VNiQP";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>🎁 Rewards Hub</h1>
+<p>Watch ads and earn rewards</p>
+</header>
+
+<div class="container">
+
 <div class="card">
-<h2>🔥 Welcome Player</h2>
-<p>Earn rewards by watching short ads and completing actions.</p>
-</div><div class="card">
-<h2>🎁 Daily Bonus</h2>
-<p>Open your reward chest every day.</p>
-<button class="btn" onclick="watchAd()">🎁 Open Chest</button>
+<h2>🎬 Watch & Earn</h2>
+<p>Click below to open an ad and get your reward after completion.</p>
+
+<button class="btn" onclick="watchAd()">
+🎁 Watch Ad & Earn Reward
+</button>
+
 <p id="status"></p>
 </div>
-</section><!-- EARN --><section id="earn">
-<div class="card">
-<h2>💰 How to Earn</h2>
-<p>• Watch rewarded ads</p>
-<p>• Complete game actions</p>
-<p>• Daily login bonus</p>
-</div>
-</section><!-- BLOG --><section id="blog">
-<div class="card">
-<h2>📌 Tips</h2>
-<p>Play smart, avoid spam clicks, and use rewards wisely.</p>
-</div>
-</section></div><script>
-function watchAd(){
-let status=document.getElementById('adStatus');
-status.innerText="🎬 Loading ad...";
 
-if(typeof show_10892289 !== "undefined"){
-show_10892289().then(()=>{
-status.innerText="🎉 Reward granted!";
-});
-}else{
-status.innerText="Ad not loaded";
-}
-}
+<div class="card">
+<h2>💡 How it works</h2>
+<p>• Click button</p>
+<p>• Watch ad</p>
+<p>• Get reward message</p>
+</div>
 
-function show(id){
-document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-}
+</div>
+
+<script>
 
 function watchAd(){
-let status=document.getElementById("status");
-status.innerText="Loading reward... 🎬";
 
-// replace with your ad function
-if(typeof show_10892289 !== "undefined"){
-show_10892289().then(()=>{
-status.innerText="🎉 Reward unlocked! +50 coins";
-});
-}else{
-status.innerText="Ad system not loaded";
+let status = document.getElementById("status");
+status.innerText = "🎬 Opening ad...";
+
+// OPEN AD (replace link if needed)
+window.open("https://YOUR-AD-LINK-HERE", "_blank");
+
+setTimeout(()=>{
+status.innerText = "🎉 Reward completed!";
+}, 5000);
+
 }
-}
-</script></body>
+
+</script>
+
+</body>
 </html>
