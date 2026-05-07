@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ads Web</title>
+<title>Ads Web - Useful Content Hub</title>
+
+<!-- SEO -->
+<meta name="description" content="Ads Web provides helpful content, guides, and updates for users worldwide.">
+<meta name="keywords" content="online tips, earning tips, web tools, guides">
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5908865301211504"
@@ -16,6 +20,7 @@ margin:0;
 font-family:Arial;
 background:#0f172a;
 color:white;
+line-height:1.6;
 }
 
 header{
@@ -26,15 +31,19 @@ text-align:center;
 
 nav button{
 margin:5px;
-padding:10px;
+padding:10px 15px;
 border:none;
 border-radius:8px;
 cursor:pointer;
+background:#334155;
+color:white;
 }
 
 section{
 display:none;
 padding:20px;
+max-width:800px;
+margin:auto;
 }
 
 .active{
@@ -45,7 +54,18 @@ display:block;
 background:#1e293b;
 padding:15px;
 border-radius:10px;
-margin-top:10px;
+margin-top:15px;
+}
+
+h2{
+color:#38bdf8;
+}
+
+footer{
+text-align:center;
+padding:15px;
+font-size:12px;
+color:#94a3b8;
 }
 </style>
 
@@ -54,10 +74,12 @@ margin-top:10px;
 <body>
 
 <header>
-<h2>Ads Web</h2>
+<h2>🌐 Ads Web</h2>
+<p>Your simple guide to online tools & tips</p>
 
 <nav>
 <button onclick="show('home')">Home</button>
+<button onclick="show('blog')">Blog</button>
 <button onclick="show('about')">About</button>
 <button onclick="show('contact')">Contact</button>
 <button onclick="show('privacy')">Privacy</button>
@@ -66,12 +88,25 @@ margin-top:10px;
 
 <!-- HOME -->
 <section id="home" class="active">
-<h2>🏠 Home</h2>
+<h2>🏠 Welcome</h2>
 
 <div class="box">
-<p>Welcome to Ads Web. This website provides simple content and information for users.</p>
+<p>
+Welcome to Ads Web. This platform shares helpful information about online tools, digital tips, and simple guides for everyday users.
+</p>
 </div>
 
+<div class="box">
+<h3>💡 What You’ll Find Here</h3>
+<ul>
+<li>Simple online tips</li>
+<li>Beginner-friendly guides</li>
+<li>Useful web tools</li>
+<li>Digital knowledge</li>
+</ul>
+</div>
+
+<!-- Ad -->
 <div class="box">
 <p>Advertisement</p>
 
@@ -89,12 +124,44 @@ data-full-width-responsive="true"></ins>
 </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>ℹ️ About</h2>
+<!-- BLOG -->
+<section id="blog">
+<h2>📝 Blog</h2>
 
 <div class="box">
-<p>Ads Web is a simple website created to provide useful content and services.</p>
+<h3>How to Stay Safe Online</h3>
+<p>
+Always use strong passwords and avoid clicking unknown links. Keeping your data safe is very important in today’s digital world.
+</p>
+</div>
+
+<div class="box">
+<h3>Top Free Tools for Students</h3>
+<p>
+There are many free tools online for learning, including note apps, calculators, and educational platforms.
+</p>
+</div>
+
+<div class="box">
+<h3>Beginner Guide to Earning Online</h3>
+<p>
+Online earning requires patience. Start with learning skills like writing, design, or coding before expecting income.
+</p>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>ℹ️ About Us</h2>
+
+<div class="box">
+<p>
+Ads Web is an independent informational website created to share helpful knowledge and resources for internet users.
+</p>
+<p>
+Our goal is to provide simple and useful content that anyone can understand.
+</p>
 </div>
 </section>
 
@@ -103,8 +170,8 @@ data-full-width-responsive="true"></ins>
 <h2>📞 Contact</h2>
 
 <div class="box">
-<p>Email: Ghazimuhammadilyas@gmail.com</p>
-<p>Feel free to contact us for support or questions.</p>
+<p>Email: ghazimuhammadilyas@gmail.com</p>
+<p>We usually respond within 24–48 hours.</p>
 </div>
 </section>
 
@@ -113,11 +180,23 @@ data-full-width-responsive="true"></ins>
 <h2>🔒 Privacy Policy</h2>
 
 <div class="box">
-<p>Ads Web uses cookies and third-party advertising services like Google AdSense.</p>
-<p>We do not collect sensitive personal data from users.</p>
-<p>Ads may use cookies to show relevant content.</p>
+<p>
+We respect your privacy. Ads Web may use cookies and third-party services like Google AdSense to display advertisements.
+</p>
+
+<p>
+We do not collect personal sensitive information. Third-party vendors may use cookies to serve relevant ads.
+</p>
+
+<p>
+By using this site, you agree to our privacy policy.
+</p>
 </div>
 </section>
+
+<footer>
+© 2026 Ads Web — All rights reserved
+</footer>
 
 <script>
 function show(id){
