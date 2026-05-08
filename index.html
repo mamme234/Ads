@@ -6,7 +6,11 @@
 
 <title>Ads Web</title>
 
+<meta name="description" content="Simple website with HilltopAds integration.">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
 <style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -20,6 +24,16 @@ padding:20px;
 background:rgba(255,255,255,0.05);
 }
 
+header h1{
+margin:0;
+font-size:34px;
+color:#00d4ff;
+}
+
+header p{
+color:#cbd5e1;
+}
+
 .container{
 max-width:800px;
 margin:auto;
@@ -31,6 +45,11 @@ background:rgba(255,255,255,0.06);
 padding:18px;
 border-radius:16px;
 margin-top:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+color:#00d4ff;
 }
 
 .btn{
@@ -46,11 +65,28 @@ color:black;
 margin-top:10px;
 }
 
-.status{
+#status{
 margin-top:10px;
 color:#facc15;
 }
+
 </style>
+
+<!-- MAIN HILLTOPADS -->
+<script>
+(function(isnr){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+
+s.settings = isnr || {};
+s.src = "//sophisticatedpin.com/b/X/VLs.dqGDl/0/YjW/cb/SeLm-9ZuJZ/UvlXkvP/TJcYw/MYjYQn5ANUjzENtsNwzoAVybNCDzkW2GNPQq";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
 
 </head>
 
@@ -58,62 +94,50 @@ color:#facc15;
 
 <header>
 <h1>🌐 Ads Web</h1>
-<p>Fixed Ads Integration</p>
+<p>Monetized with HilltopAds</p>
 </header>
 
 <div class="container">
 
-<!-- MULTI AD -->
 <div class="card">
-<h2>🎁 Multi Ad</h2>
-<button class="btn" onclick="multiAd()">🎬 Show Multi Ad</button>
-<p id="status1" class="status"></p>
+<h2>🎁 Main Ad</h2>
+<button class="btn" onclick="watchAd()">🎬 Watch Main Ad</button>
+<p id="status"></p>
 </div>
 
-<!-- POPUNDER AD -->
 <div class="card">
-<h2>⚡ Popunder Ad</h2>
-<button class="btn" onclick="popAd()">🚀 Show Popunder</button>
-<p id="status2" class="status"></p>
+<h2>🔥 Extra Ad Zone</h2>
+<p>Click to load second ad script</p>
+
+<button class="btn" onclick="loadExtraAd()">🚀 Load Extra Ad</button>
+<p id="status2"></p>
 </div>
 
 </div>
 
 <script>
 
-const AD_SCRIPT = "//windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
+function watchAd(){
+let status = document.getElementById("status");
+status.innerText = "🎬 Loading ad...";
 
-// MULTI AD FUNCTION
-function multiAd(){
-document.getElementById("status1").innerText = "🎬 Loading ad...";
-
-loadAdScript("status1");
+setTimeout(()=>{
+status.innerText = "🎉 Ad triggered successfully!";
+},2000);
 }
 
-// POPUNDER FUNCTION
-function popAd(){
-document.getElementById("status2").innerText = "⚡ Loading popunder...";
+function loadExtraAd(){
+let status2 = document.getElementById("status2");
+status2.innerText = "🔥 Loading extra ad...";
 
-loadAdScript("status2");
-}
-
-// COMMON LOADER (FIXED)
-function loadAdScript(statusId){
-
-const script = document.createElement("script");
-script.src = AD_SCRIPT;
+var script = document.createElement("script");
+script.src = "//windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
 script.async = true;
-
-script.onload = function(){
-document.getElementById(statusId).innerText = "✅ Ad script loaded (check popup/redirect)";
-};
-
-script.onerror = function(){
-document.getElementById(statusId).innerText = "❌ Ad failed (blocked or invalid script)";
-};
-
 document.body.appendChild(script);
 
+setTimeout(()=>{
+status2.innerText = "✅ Extra ad loaded!";
+},2000);
 }
 
 </script>
