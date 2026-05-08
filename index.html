@@ -7,7 +7,6 @@
 <title>Ads Web</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
@@ -51,7 +50,6 @@ margin-top:10px;
 margin-top:10px;
 color:#facc15;
 }
-
 </style>
 
 </head>
@@ -60,14 +58,14 @@ color:#facc15;
 
 <header>
 <h1>🌐 Ads Web</h1>
-<p>Separated Ads System (Fixed)</p>
+<p>Fixed Ads Integration</p>
 </header>
 
 <div class="container">
 
-<!-- MULTI TAG AD -->
+<!-- MULTI AD -->
 <div class="card">
-<h2>🎁 Multi Tag Ad</h2>
+<h2>🎁 Multi Ad</h2>
 <button class="btn" onclick="multiAd()">🎬 Show Multi Ad</button>
 <p id="status1" class="status"></p>
 </div>
@@ -83,27 +81,38 @@ color:#facc15;
 
 <script>
 
-function multiAd(){
-document.getElementById("status1").innerText = "🎬 Loading multi-tag ad...";
+const AD_SCRIPT = "//windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
 
-setTimeout(()=>{
-document.getElementById("status1").innerText = "✅ Multi-tag ad triggered!";
-},2000);
+// MULTI AD FUNCTION
+function multiAd(){
+document.getElementById("status1").innerText = "🎬 Loading ad...";
+
+loadAdScript("status1");
 }
 
+// POPUNDER FUNCTION
 function popAd(){
+document.getElementById("status2").innerText = "⚡ Loading popunder...";
 
-document.getElementById("status2").innerText = "⚡ Preparing popunder...";
+loadAdScript("status2");
+}
 
-// IMPORTANT: load popunder ONLY on click (required by most ad networks)
-var script = document.createElement("script");
-script.src = "//windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
+// COMMON LOADER (FIXED)
+function loadAdScript(statusId){
+
+const script = document.createElement("script");
+script.src = AD_SCRIPT;
 script.async = true;
-document.body.appendChild(script);
 
-setTimeout(()=>{
-document.getElementById("status2").innerText = "✅ Popunder triggered!";
-},2000);
+script.onload = function(){
+document.getElementById(statusId).innerText = "✅ Ad script loaded (check popup/redirect)";
+};
+
+script.onerror = function(){
+document.getElementById(statusId).innerText = "❌ Ad failed (blocked or invalid script)";
+};
+
+document.body.appendChild(script);
 
 }
 
