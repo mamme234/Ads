@@ -6,8 +6,8 @@
 
 <title>Ads Web</title>
 
-<meta name="description" content="Simple website with HilltopAds integration.">
-<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta name="description" content="Simple Ads Web with integrated ad script">
+<meta name="referrer" content="no-referrer-when-downgrade">
 
 <style>
 
@@ -62,7 +62,6 @@ border-radius:14px;
 cursor:pointer;
 background:linear-gradient(45deg,#00ffcc,#00aaff);
 color:black;
-margin-top:10px;
 }
 
 #status{
@@ -72,19 +71,24 @@ color:#facc15;
 
 </style>
 
-<!-- MAIN HILLTOPADS -->
+<!-- 🔥 YOUR AD NETWORK SCRIPT (FIXED POSITION) -->
 <script>
-(function(isnr){
+(function(xgzx){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
 
-s.settings = isnr || {};
-s.src = "//sophisticatedpin.com/b/X/VLs.dqGDl/0/YjW/cb/SeLm-9ZuJZ/UvlXkvP/TJcYw/MYjYQn5ANUjzENtsNwzoAVybNCDzkW2GNPQq";
+s.settings = xgzx || {};
+s.src = "//sophisticatedpin.com/bzXdVgs/d.GglU0zY/WvcE/weKmJ9ruXZTUclKkvPMTtcnwgMMj/ga0-N/DDkJtqN/zJAUyxO/D/Qi1gMiww";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 
-l.parentNode.insertBefore(s, l);
+if (l && l.parentNode) {
+    l.parentNode.insertBefore(s, l);
+} else {
+    document.head.appendChild(s);
+}
+
 })({})
 </script>
 
@@ -94,23 +98,24 @@ l.parentNode.insertBefore(s, l);
 
 <header>
 <h1>🌐 Ads Web</h1>
-<p>Monetized with HilltopAds</p>
+<p>HilltopAds / Network Integration</p>
 </header>
 
 <div class="container">
 
+<!-- BUTTON -->
 <div class="card">
-<h2>🎁 Main Ad</h2>
-<button class="btn" onclick="watchAd()">🎬 Watch Main Ad</button>
+
+<h2>🎁 Watch Ads</h2>
+
+<p>Click below to trigger ad</p>
+
+<button class="btn" onclick="watchAd()">
+🎬 Watch Ad
+</button>
+
 <p id="status"></p>
-</div>
 
-<div class="card">
-<h2>🔥 Extra Ad Zone</h2>
-<p>Click to load second ad script</p>
-
-<button class="btn" onclick="loadExtraAd()">🚀 Load Extra Ad</button>
-<p id="status2"></p>
 </div>
 
 </div>
@@ -118,26 +123,21 @@ l.parentNode.insertBefore(s, l);
 <script>
 
 function watchAd(){
+
 let status = document.getElementById("status");
 status.innerText = "🎬 Loading ad...";
 
-setTimeout(()=>{
-status.innerText = "🎉 Ad triggered successfully!";
-},2000);
+// safe click-trigger popup method
+const adUrl = "https://windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
+
+let win = window.open(adUrl, "_blank");
+
+if(win){
+    status.innerText = "🎉 Ad opened successfully!";
+} else {
+    status.innerText = "❌ Popup blocked by browser";
 }
 
-function loadExtraAd(){
-let status2 = document.getElementById("status2");
-status2.innerText = "🔥 Loading extra ad...";
-
-var script = document.createElement("script");
-script.src = "//windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
-script.async = true;
-document.body.appendChild(script);
-
-setTimeout(()=>{
-status2.innerText = "✅ Extra ad loaded!";
-},2000);
 }
 
 </script>
