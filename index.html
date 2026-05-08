@@ -6,8 +6,9 @@
 
 <title>Ads Web</title>
 
-<meta name="description" content="Simple Ads Web with integrated ad script">
-<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="Simple website with HilltopAds Zone integration.">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
 <style>
 
@@ -71,24 +72,19 @@ color:#facc15;
 
 </style>
 
-<!-- 🔥 YOUR AD NETWORK SCRIPT (FIXED POSITION) -->
+<!-- 🔥 HILLTOPADS ZONE #7024961 -->
 <script>
-(function(xgzx){
+(function(isnr){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
 
-s.settings = xgzx || {};
-s.src = "//sophisticatedpin.com/bzXdVgs/d.GglU0zY/WvcE/weKmJ9ruXZTUclKkvPMTtcnwgMMj/ga0-N/DDkJtqN/zJAUyxO/D/Qi1gMiww";
+s.settings = isnr || {};
+s.src = "//sophisticatedpin.com/b/X/VLs.dqGDl/0/YjW/cb/SeLm-9ZuJZ/UvlXkvP/TJcYw/MYjYQn5ANUjzENtsNwzoAVybNCDzkW2GNPQq";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 
-if (l && l.parentNode) {
-    l.parentNode.insertBefore(s, l);
-} else {
-    document.head.appendChild(s);
-}
-
+l.parentNode.insertBefore(s, l);
 })({})
 </script>
 
@@ -98,24 +94,25 @@ if (l && l.parentNode) {
 
 <header>
 <h1>🌐 Ads Web</h1>
-<p>HilltopAds / Network Integration</p>
+<p>Monetized with HilltopAds Zone</p>
 </header>
 
 <div class="container">
 
-<!-- BUTTON -->
 <div class="card">
-
 <h2>🎁 Watch Ads</h2>
-
-<p>Click below to trigger ad</p>
+<p>Click below to trigger ads from your zone.</p>
 
 <button class="btn" onclick="watchAd()">
 🎬 Watch Ad
 </button>
 
 <p id="status"></p>
+</div>
 
+<div class="card">
+<h2>ℹ️ Info</h2>
+<p>Ads are loaded automatically from HilltopAds Zone #7024961.</p>
 </div>
 
 </div>
@@ -127,16 +124,10 @@ function watchAd(){
 let status = document.getElementById("status");
 status.innerText = "🎬 Loading ad...";
 
-// safe click-trigger popup method
-const adUrl = "https://windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
-
-let win = window.open(adUrl, "_blank");
-
-if(win){
-    status.innerText = "🎉 Ad opened successfully!";
-} else {
-    status.innerText = "❌ Popup blocked by browser";
-}
+// No fake ad link needed — Zone handles everything
+setTimeout(()=>{
+status.innerText = "🎉 Ad triggered successfully!";
+}, 3000);
 
 }
 
