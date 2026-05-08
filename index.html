@@ -6,8 +6,7 @@
 
 <title>Ads Web</title>
 
-<meta name="description" content="Simple website with HilltopAds Zone integration.">
-
+<meta name="description" content="Simple website with HilltopAds integration.">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
 <style>
@@ -63,16 +62,17 @@ border-radius:14px;
 cursor:pointer;
 background:linear-gradient(45deg,#00ffcc,#00aaff);
 color:black;
+margin-top:10px;
 }
 
-#status{
+#status,#status2,#status3{
 margin-top:10px;
 color:#facc15;
 }
 
 </style>
 
-<!-- 🔥 HILLTOPADS ZONE #7024961 -->
+<!-- 🔥 MAIN HILLTOPADS ZONE -->
 <script>
 (function(isnr){
 var d = document,
@@ -94,25 +94,30 @@ l.parentNode.insertBefore(s, l);
 
 <header>
 <h1>🌐 Ads Web</h1>
-<p>Monetized with HilltopAds Zone</p>
+<p>Monetized with HilltopAds Zones</p>
 </header>
 
 <div class="container">
 
+<!-- MAIN AD -->
 <div class="card">
-<h2>🎁 Watch Ads</h2>
-<p>Click below to trigger ads from your zone.</p>
-
-<button class="btn" onclick="watchAd()">
-🎬 Watch Ad
-</button>
-
+<h2>🎁 Main Ad</h2>
+<button class="btn" onclick="watchAd()">🎬 Watch Main Ad</button>
 <p id="status"></p>
 </div>
 
+<!-- EXTRA AD 1 -->
 <div class="card">
-<h2>ℹ️ Info</h2>
-<p>Ads are loaded automatically from HilltopAds Zone #7024961.</p>
+<h2>🚀 Extra Ad Zone 1</h2>
+<button class="btn" onclick="loadExtraAd()">🔥 Watch Extra Ad 1</button>
+<p id="status2"></p>
+</div>
+
+<!-- EXTRA AD 2 -->
+<div class="card">
+<h2>⚡ Extra Ad Zone 2</h2>
+<button class="btn" onclick="loadExtraAd2()">🚀 Watch Extra Ad 2</button>
+<p id="status3"></p>
 </div>
 
 </div>
@@ -120,15 +125,36 @@ l.parentNode.insertBefore(s, l);
 <script>
 
 function watchAd(){
-
-let status = document.getElementById("status");
-status.innerText = "🎬 Loading ad...";
-
-// No fake ad link needed — Zone handles everything
+document.getElementById("status").innerText = "🎬 Loading main ad...";
 setTimeout(()=>{
-status.innerText = "🎉 Ad triggered successfully!";
-}, 3000);
+document.getElementById("status").innerText = "🎉 Main ad triggered!";
+},2000);
+}
 
+function loadExtraAd(){
+document.getElementById("status2").innerText = "🔥 Loading extra ad 1...";
+
+var script = document.createElement("script");
+script.src = "//windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
+script.async = true;
+document.body.appendChild(script);
+
+setTimeout(()=>{
+document.getElementById("status2").innerText = "✅ Extra ad 1 loaded!";
+},2000);
+}
+
+function loadExtraAd2(){
+document.getElementById("status3").innerText = "🔥 Loading extra ad 2...";
+
+var script = document.createElement("script");
+script.src = "https://wrathful-piano.com/b.3AVk0NPp3tpxvlbHm_VNJYZPDO0Z3OMsDvIh4yMuzDIZ1bLRTzc/wEMrjCgmzAM/jZkk";
+script.async = true;
+document.body.appendChild(script);
+
+setTimeout(()=>{
+document.getElementById("status3").innerText = "✅ Extra ad 2 loaded!";
+},2000);
 }
 
 </script>
