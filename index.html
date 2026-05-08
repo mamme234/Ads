@@ -1,137 +1,522 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Ads Web</title>
+<meta name="f460705ac2eb12d36b09d6d4c5298a15fb324925"
+content="f460705ac2eb12d36b09d6d4c5298a15fb324925"/>
 
-<meta name="description" content="Simple website with HilltopAds Zone integration.">
+<title>Crypto Tap Pro</title>
 
-<meta name="referrer" content="no-referrer-when-downgrade" />
+<!-- ADS SDK -->
+<script src="https://libtl.com/sdk.js"
+data-zone="10892289"
+data-sdk="show_10892289"></script>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial;
-background:#0f172a;
+background:radial-gradient(circle at top,#1b2a4a,#050914 70%);
 color:white;
 }
 
-header{
-text-align:center;
-padding:20px;
-background:rgba(255,255,255,0.05);
-}
-
-header h1{
-margin:0;
-font-size:34px;
-color:#00d4ff;
-}
-
-header p{
-color:#cbd5e1;
-}
-
-.container{
-max-width:800px;
-margin:auto;
-padding:15px;
-}
-
-.card{
+/* TOPBAR */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px;
 background:rgba(255,255,255,0.06);
-padding:18px;
-border-radius:16px;
-margin-top:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
 }
 
-h2{
-color:#00d4ff;
+.user{
+display:flex;
+gap:10px;
+align-items:center;
 }
 
-.btn{
-width:100%;
-padding:15px;
-font-size:18px;
-font-weight:bold;
-border:none;
+.user img{
+width:48px;
+height:48px;
+border-radius:50%;
+border:2px solid #facc15;
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+margin-top:12px;
+}
+
+.box{
+background:rgba(255,255,255,0.06);
+padding:12px;
 border-radius:14px;
+width:40%;
+text-align:center;
+}
+
+.box strong{
+display:block;
+font-size:20px;
+color:#facc15;
+}
+
+/* TAP */
+.tap{
+display:flex;
+justify-content:center;
+margin-top:70px;
+}
+
+.tap button{
+width:220px;
+height:220px;
+border-radius:50%;
+border:none;
+font-size:22px;
+font-weight:bold;
+background:radial-gradient(circle,#ffe066,#facc15);
+color:#111;
+box-shadow:0 0 40px rgba(250,204,21,0.6);
+}
+
+/* SCREENS */
+.screen{
+display:none;
+padding:15px;
+}
+
+.active{
+display:block;
+}
+
+/* PROFILE */
+.profileCard{
+background:rgba(255,255,255,0.07);
+padding:15px;
+border-radius:18px;
+margin-top:12px;
+}
+
+.profileHeader{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.profileHeader img{
+width:60px;
+height:60px;
+border-radius:50%;
+border:2px solid gold;
+}
+
+.badge{
+background:gold;
+color:black;
+padding:3px 8px;
+border-radius:10px;
+font-size:12px;
+}
+
+input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+margin-top:8px;
+background:rgba(255,255,255,0.08);
+color:white;
+}
+
+button{
+padding:12px;
+border:none;
+border-radius:12px;
 cursor:pointer;
+font-weight:bold;
+}
+
+.adBtn{
+width:100%;
+margin-top:10px;
 background:linear-gradient(45deg,#00ffcc,#00aaff);
 color:black;
+font-size:18px;
+}
+
+/* NAV */
+.nav{
+position:fixed;
+bottom:0;
+width:100%;
+display:flex;
+background:rgba(0,0,0,0.6);
+}
+
+.nav button{
+flex:1;
+background:none;
+color:white;
 }
 
 #status{
 margin-top:10px;
+text-align:center;
 color:#facc15;
 }
 
 </style>
-
-<!-- 🔥 HILLTOPADS ZONE #7024961 -->
-<script>
-(function(isnr){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-
-s.settings = isnr || {};
-s.src = "//sophisticatedpin.com/b/X/VLs.dqGDl/0/YjW/cb/SeLm-9ZuJZ/UvlXkvP/TJcYw/MYjYQn5ANUjzENtsNwzoAVybNCDzkW2GNPQq";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
 </head>
 
 <body>
 
-<header>
-<h1>🌐 Ads Web</h1>
-<p>Monetized with HilltopAds Zone</p>
-</header>
+<!-- HOME -->
+<div id="home" class="screen active">
 
-<div class="container">
+<div class="topbar">
 
-<div class="card">
-<h2>🎁 Watch Ads</h2>
-<p>Click below to trigger ads from your zone.</p>
+<div class="user">
+<img id="photo">
 
-<button class="btn" onclick="watchAd()">
-🎬 Watch Ad
+<div>
+<div id="name">User</div>
+<div id="uname">@user</div>
+</div>
+</div>
+
+<div>
+Lv <span id="level">1</span>
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="box">
+Coins
+<strong id="coins">0</strong>
+</div>
+
+<div class="box">
+USDT
+<strong id="usdt">0.000</strong>
+</div>
+
+</div>
+
+<div class="tap">
+<button id="tapBtn">TAP</button>
+</div>
+
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="screen">
+
+<div class="profileCard">
+
+<div class="profileHeader">
+
+<img id="pPhoto">
+
+<div>
+<h3 id="pName">User</h3>
+<span class="badge">VIP Player</span>
+</div>
+
+</div>
+
+<p id="pUser"></p>
+
+</div>
+
+<!-- REFERRAL -->
+<div class="profileCard">
+
+<h3>🔗 Referral Link</h3>
+
+<input id="refLink" readonly>
+
+<button onclick="copyRef()" style="width:100%">
+Copy Link
+</button>
+
+</div>
+
+<!-- TASKS -->
+<div class="profileCard">
+
+<h3>🔥 Social Tasks</h3>
+
+<button id="tgTask"
+onclick="task('telegram')"
+style="width:100%;margin-top:8px;">
+Telegram (+500)
+</button>
+
+<button id="ytTask"
+onclick="task('youtube')"
+style="width:100%;margin-top:8px;">
+YouTube (+1250)
+</button>
+
+<button id="ttTask"
+onclick="task('tiktok')"
+style="width:100%;margin-top:8px;">
+TikTok (+1000)
+</button>
+
+</div>
+
+<!-- NEW ADS BUTTON -->
+<div class="profileCard">
+
+<h3>💰 Reward Ads</h3>
+
+<button class="adBtn" onclick="openDirectAd()">
+🎬 Open Reward Ad
 </button>
 
 <p id="status"></p>
-</div>
-
-<div class="card">
-<h2>ℹ️ Info</h2>
-<p>Ads are loaded automatically from HilltopAds Zone #7024961.</p>
-</div>
 
 </div>
+
+<!-- WITHDRAW -->
+<div class="profileCard">
+
+<h3>💸 Withdraw</h3>
+
+<input id="wallet" placeholder="Wallet address">
+
+<input id="amount" placeholder="Amount USDT">
+
+<button onclick="withdraw()" style="width:100%">
+Withdraw
+</button>
+
+</div>
+
+</div>
+
+<!-- DEPOSIT -->
+<div id="deposit" class="screen">
+
+<div class="profileCard">
+
+<h2>💰 Deposit</h2>
+
+<input id="depWallet"
+readonly
+value="UQAYjMccjJ8Xn1z9hodUImMjJCB2qmWGjlMup9-sVZtEQFWH">
+
+<button onclick="copyWallet()" style="width:100%">
+Copy Address
+</button>
+
+</div>
+
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+
+<button onclick="show('home')">
+Home
+</button>
+
+<button onclick="show('profile')">
+Profile
+</button>
+
+<button onclick="show('deposit')">
+Deposit
+</button>
+
+</div>
+
+<!-- TELEGRAM -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <script>
 
-function watchAd(){
+const tg = window.Telegram?.WebApp;
+const user = tg?.initDataUnsafe?.user;
 
-let status = document.getElementById("status");
-status.innerText = "🎬 Loading ad...";
+if(tg) tg.expand();
 
-// No fake ad link needed — Zone handles everything
-setTimeout(()=>{
-status.innerText = "🎉 Ad triggered successfully!";
-}, 3000);
+let state = {
+coins:0,
+usdt:0
+};
+
+/* NAVIGATION */
+function show(id){
+
+document
+.querySelectorAll(".screen")
+.forEach(s=>s.classList.remove("active"));
+
+document
+.getElementById(id)
+.classList.add("active");
 
 }
+
+/* RENDER */
+function render(){
+
+document.getElementById("coins").innerText =
+Math.floor(state.coins);
+
+document.getElementById("usdt").innerText =
+state.usdt.toFixed(3);
+
+}
+
+/* TAP */
+function tap(){
+
+state.coins += 1;
+state.usdt += 0.001;
+
+render();
+
+}
+
+document
+.getElementById("tapBtn")
+.addEventListener("click", tap);
+
+/* COPY FUNCTIONS */
+function copyRef(){
+
+navigator.clipboard.writeText(
+document.getElementById("refLink").value
+);
+
+alert("Copied");
+
+}
+
+function copyWallet(){
+
+navigator.clipboard.writeText(
+document.getElementById("depWallet").value
+);
+
+alert("Copied");
+
+}
+
+/* TASK */
+function task(type){
+
+let links = {
+
+telegram:"https://t.me/gangs234",
+
+youtube:"https://youtube.com/@Mamme234",
+
+tiktok:"https://tiktok.com/@mammeliyas"
+
+};
+
+window.open(links[type], "_blank");
+
+alert("Task opened!");
+
+}
+
+/* WITHDRAW */
+function withdraw(){
+
+let wallet =
+document.getElementById("wallet").value;
+
+let amount =
+parseFloat(document.getElementById("amount").value);
+
+if(!wallet || !amount){
+
+alert("Enter details");
+
+return;
+
+}
+
+alert("Withdraw request submitted");
+
+}
+
+/* TELEGRAM USER */
+if(user){
+
+document.getElementById("name").innerText =
+user.first_name;
+
+document.getElementById("uname").innerText =
+"@" + (user.username || "user");
+
+document.getElementById("pName").innerText =
+user.first_name;
+
+document.getElementById("pUser").innerText =
+"ID: " + user.id;
+
+document.getElementById("refLink").value =
+"https://t.me/Studybuddy_2025Bot?start=" + user.id;
+
+if(user.photo_url){
+
+photo.src = user.photo_url;
+pPhoto.src = user.photo_url;
+
+}
+
+}
+
+/* NEW DIRECT AD BUTTON */
+function openDirectAd(){
+
+const url =
+"https://windy-imagination.com/dFmTFez.dtGlNav/ZBGVUH/ge/mA9IuLZrUjlMk/PbTtc/wCMojFgyyTMHjsECt_NmzMA/y/OpDvIpy/NfQH";
+
+if(window.Telegram && Telegram.WebApp){
+
+Telegram.WebApp.openLink(url);
+
+}else{
+
+window.open(url,"_blank");
+
+}
+
+let status =
+document.getElementById("status");
+
+status.innerText =
+"🎉 Opening reward ad...";
+
+setTimeout(()=>{
+
+status.innerText =
+"✅ Ad opened successfully!";
+
+},2000);
+
+}
+
+/* START */
+render();
 
 </script>
 
 </body>
-</html>
+    </html>
