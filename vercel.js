@@ -1,10 +1,9 @@
 {
-  "headers": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ]
 }
